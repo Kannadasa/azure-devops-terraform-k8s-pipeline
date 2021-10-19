@@ -22,7 +22,7 @@ steps:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
     backendType: 'azurerm'
-    backendServiceArm: 'azure-service-connection'
+    backendServiceArm: 'Mazumdar-svc'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-storage-rg'
     backendAzureRmResourceGroupLocation: 'UKsouth'
