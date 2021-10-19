@@ -1,4 +1,4 @@
 provider "azurerm" {
-  version = "latest"
+ /* version = "latest"*/
   features {}
 }
