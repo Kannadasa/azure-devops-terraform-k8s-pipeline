@@ -1,0 +1,37 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: DownloadSecureFile@1
+  name: publickey
+  inputs:
+    secureFile: 'azure_rsa.pub'
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
+    backendType: 'azurerm'
+    backendServiceArm: 'azure-service-connection'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'terraform-storage-rg'
+    backendAzureRmResourceGroupLocation: 'UKsouth'
+    backendAzureRmStorageAccountName: 'terraformkannaxyz'
+    backendAzureRmContainerName: 'testate'
+    backendAzureRmKey: 'm.terraform.tfstate'
+- task: TerraformCLI@0
+  inputs:
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
+    environmentServiceName: 'azure-service-connection'
+    commandOptions: '-var ssh_public_key=$(publickey.secureFilePath)'
