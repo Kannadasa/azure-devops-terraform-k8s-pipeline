@@ -33,5 +33,5 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
-    environmentServiceName: 'mazumdar-svc'
+    environmentServiceName: 'Mazumdar-svc'
     commandOptions: '-var ssh_public_key=$(publickey.secureFilePath)'
