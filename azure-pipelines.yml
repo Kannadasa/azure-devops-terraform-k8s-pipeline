@@ -22,7 +22,7 @@ steps:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
     backendType: 'azurerm'
-    backendServiceArm: 'Mazumdar-svc'
+    backendServiceArm: 'terraform-svc'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-storage-rg'
     backendAzureRmResourceGroupLocation: 'UKsouth'
@@ -33,5 +33,5 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
-    environmentServiceName: 'Mazumdar-svc'
+    environmentServiceName: 'terraform-svc'
     commandOptions: '-var ssh_public_key=$(publickey.secureFilePath)'
