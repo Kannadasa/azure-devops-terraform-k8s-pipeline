@@ -33,5 +33,5 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
-    environmentServiceName: 'azure-service-connection'
+    environmentServiceName: 'terraform-svc'
     commandOptions: '-var ssh_public_key=$(publickey.secureFilePath)'
