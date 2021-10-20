@@ -29,9 +29,21 @@ steps:
     backendAzureRmStorageAccountName: 'terraformkannaxyz'
     backendAzureRmContainerName: 'testate'
     backendAzureRmKey: 'm.terraform.tfstate'
+
 - task: TerraformCLI@0
+  displayName: Terraform Import
   inputs:
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
-    environmentServiceName: 'terraform-svc'
-    commandOptions: '-var client_id=${client_id} -var client_secret=${client_secret} -var ssh_public_key=$(publickey.secureFilePath)'
+    command: 'import'
+    workingDirectory: '$(System.DefaultWorkingDirectory/configuration/iaac/azure'
+    environmentServiceName: 'Pay-As-You-Go(9beeafa3-8dd6-4cbb-8549-9d0943f83a0e)'
+    allowTelemetryCollection: true
+    resourceAddress: 'azurerm_resource_group.k8s'
+    resourceId: '/subscriptions/9beeafa3-8dd6-4cbb-8549-9d0943f83a0e/resourceGroups/k8s-rg-3'
+
+
+#- task: TerraformCLI@0
+#  inputs:
+#    command: 'apply'
+#    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
+##    environmentServiceName: 'terraform-svc'
+ #   commandOptions: '-var client_id=${client_id} -var client_secret=${client_secret} -var ssh_public_key=$(publickey.secureFilePath)'
