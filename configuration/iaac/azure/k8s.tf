@@ -8,7 +8,7 @@ resource "azurerm_resource_group_template_deployment" "deploy" {
 resource "azurerm_resource_group" "k8s" {
   name     = "${var.resource_group_name}"
   location = "${var.location}"
-  id = azurerm_kubernetes_cluster.k8s
+  
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
