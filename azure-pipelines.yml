@@ -34,7 +34,7 @@ steps:
   displayName: Terraform Import
   inputs:
     command: 'import'
-    workingDirectory: '$(System.DefaultWorkingDirectory/configuration/iaac/azure'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure'
     environmentServiceName: 'terraform-svc'
     allowTelemetryCollection: true
     resourceAddress: 'azurerm_resource_group.k8s'
