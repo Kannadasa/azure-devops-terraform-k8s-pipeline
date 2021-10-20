@@ -35,7 +35,7 @@ steps:
   inputs:
     command: 'import'
     workingDirectory: '$(System.DefaultWorkingDirectory/configuration/iaac/azure'
-    environmentServiceName: 'Pay-As-You-Go(9beeafa3-8dd6-4cbb-8549-9d0943f83a0e)'
+    environmentServiceName: 'terraform-svc'
     allowTelemetryCollection: true
     resourceAddress: 'azurerm_resource_group.k8s'
     resourceId: '/subscriptions/9beeafa3-8dd6-4cbb-8549-9d0943f83a0e/resourceGroups/k8s-rg-3'
