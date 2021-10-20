@@ -2,7 +2,8 @@ resource "azurerm_resource_group_template_deployment" "deploy" {
 
   name = "incrdeploy"
   resource_group_name = "k8s-rg2"
-  deployment_mode = "incremental"
+  deployment_mode = "complete incremental"
+  template_spec_version_id = azurerm_kubernetes_cluster.k8s
   
 }
 resource "azurerm_resource_group" "k8s" {
