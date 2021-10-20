@@ -3,8 +3,7 @@ resource "azurerm_resource_group_template_deployment" "deploy" {
   name = "incrdeploy"
   resource_group_name = "k8s-rg2"
   deployment_mode = "Incremental"
-  template_spec_version_id = azurerm_kubernetes_cluster.k8s
-  
+  template_spec_version_id = "${azurerm_resource_group.k8s.name}"
 }
 resource "azurerm_resource_group" "k8s" {
   name     = "${var.resource_group_name}"
