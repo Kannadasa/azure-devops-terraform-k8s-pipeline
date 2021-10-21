@@ -15,7 +15,7 @@ steps:
 - task: DownloadSecureFile@1
   name: publickey
   inputs:
-    secureFile: 'aksprodsshkey.pub'
+    secureFile: 'akSprodsshkey.pub'
 
 - task: TerraformCLI@0
   inputs:
