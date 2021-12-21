@@ -1,5 +1,10 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
+- task: AzureVmssDeployment@0
+  inputs:
+    azureSubscription: 'terraform-svc'
+    action: 'Update image'
+    vmssName: 
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
